@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: zmkfirmware/zmk-build-arm:2.5
+      image: zmkfirmware/zmk-build-arm:3.0
     name: Build
     steps:
       - name: Checkout
@@ -41,7 +41,7 @@ jobs:
       - name: Boardsource 5x12 Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 boardsource5x12_nice_nano_v2.uf2
+        run: cp build/zephyr/zmk.uf2 5x12.uf2
       - name: Archive (Boardsource 5x12)
         uses: actions/upload-artifact@v2
         with:
