@@ -42,8 +42,8 @@ jobs:
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
         run: cp build/zephyr/zmk.uf2 5x12.uf2
-      - name: Archive (Boardsource 5x12)
+      - name: Archive (5x12)
         uses: actions/upload-artifact@v2
         with:
           name: firmware
-          path: boardsource5x12_nice_nano_v2.uf2
+          path: 5x12.uf2
