@@ -384,7 +384,7 @@
 
 		tdae: tdae {
 		    compatible = "zmk,behavior-tap-dance";
-		    label = "tdue";
+		    label = "tdae";
 		    #binding-cells = <0>;
 		    tapping-term-ms = <150>;
 		    bindings = <&kp A>, <&kp DE_AE>;
