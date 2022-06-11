@@ -28,9 +28,9 @@
 #define DE_PIPE		RA(DE_LT)
 
 #define DE_EXCL 	RS(N1)
-#define DE_QUOTEDOUBLE 	RS(N2)
+#define DE_QUOTEDOUBLE 	LS(N2)
 #define DE_HASH 	BACKSLASH
-#define DE_QUOTESINGLE 	RS(DE_HASH)
+#define DE_QUOTESINGLE 	LS(DE_HASH)
 #define DE_USD		RS(N4)
 #define DE_PERCT	RS(N5)
 #define DE_CRRT		GRAVE
