@@ -64,11 +64,12 @@
 		bindings
 		= <&macro_tap &kp DE_BRL_CRL &kp N &kp O &kp F &kp O &kp R &kp M &kp A &kp T &kp DE_BRR_CRL >
 		;)
+		
 		ZMK_MACRO(mail,
 		wait-ms = <0>;
 		tap-ms = <0>;
 		bindings
-		= <&macro_tap &kp A &kp L &kp E &kp X &kp A &kp N &kp D &kp E &kp R &kp DE_DOT &kp K &kp L &kp A &kp U &kp T &kp K &kp E &kp DE_AT &kp S &kp V &kp A &kp DE_DOT &kp D &kp E >
+		= <&macro_tap &kp A &kp L &kp E &kp X &kp A &kp N &kp D &kp E &kp R &kp DOT &kp K &kp L &kp A &kp U &kp T &kp K &kp E &kp DE_AT &kp S &kp V &kp A &kp DOT &kp D &kp E >
 		;)
 
 		ZMK_MACRO(unshift_question,
