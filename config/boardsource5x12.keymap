@@ -524,7 +524,7 @@
                 &kp F1    &kp F2    &kp F3   &kp F4   &kp F5     &kp F6   &kp F7    &kp F8     &kp F9   &kp F10    &kp F11    &kp F12
                 &trans    &none     &none    &none    &none      &none    &none     &kp DE_UE  &none    &kp DE_OE  &kp PSCRN  &trans
                 &kp DE_AE &kp DE_SS &none    &none    &none      &none    &kp LEFT  &kp DOWN   &kp UP   &kp RIGHT  &none      &trans
-                &trans    &BOOTLD   &reset   &none    &none      &none    &none     &none      &none    &none      &none      &none
+                &trans    &bootloader &reset   &none    &none      &none    &none     &none      &none    &none      &none      &none
                 &trans    &trans    &trans   &trans   &mo ADJUST &trans   &trans    &mo ADJUST &trans   &trans     &trans     &trans 
             >;
         };
