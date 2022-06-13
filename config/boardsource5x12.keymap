@@ -12,8 +12,7 @@
 #define DEFAULT 0
 #define LOWER   1
 #define ADJUST   2
-#define UML_START 3
-#define UML     4
+#define MACRO     3
 
 #define DE_SLASH        RS(N7)
 #define DE_QUESTION     RS(MINUS)
