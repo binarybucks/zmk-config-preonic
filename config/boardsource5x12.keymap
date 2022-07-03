@@ -85,7 +85,27 @@ mm_##NAME: mm_##NAME {\
 / {
 
 	behaviors {
-	
+		 MOD_MORPH_NOSHIFT_MACRO(comma, COMMA, DE_LT)
+		 MOD_MORPH_NOSHIFT_MACRO(dot, DOT, DE_MT)
+		 MOD_MORPH_NOSHIFT_MACRO(slash, DE_SLASH, DE_QUESTION)
+		 MOD_MORPH_NOSHIFT_MACRO(pipe, DE_PIPE, DE_BACKSLASH)
+
+		 MOD_MORPH_NOSHIFT_MACRO(semicolon, DE_SEMICOLON, DE_COLON)
+		 MOD_MORPH_NOSHIFT_MACRO(minus, DE_MINUS, DE_UNDERSCORE)
+		 MOD_MORPH_NOSHIFT_MACRO(equal, DE_EQUAL, DE_PLUS)
+		 MOD_MORPH_NOSHIFT_MACRO(1, N1, DE_EXCL)
+		 MOD_MORPH_NOSHIFT_MACRO(2, N2, DE_QUOTEDOUBLE)
+		 MOD_MORPH_NOSHIFT_MACRO(3, N3, DE_HASH)
+		 MOD_MORPH_NOSHIFT_MACRO(4, N4, DE_USD)
+		 MOD_MORPH_NOSHIFT_MACRO(5, N5, DE_PERCT)
+		 MOD_MORPH_NOSHIFT_MACRO(6, N6, DE_CRRT)
+		 MOD_MORPH_NOSHIFT_MACRO(7, N7, DE_AMPST)
+		 MOD_MORPH_NOSHIFT_MACRO(8, N8, DE_ASRSK)
+		 MOD_MORPH_NOSHIFT_MACRO(9, N9, DE_BRL_RND)
+		 MOD_MORPH_NOSHIFT_MACRO(0,N0, DE_BRR_RND)
+		 MOD_MORPH_NOSHIFT_MACRO(quote, DE_QUOTESINGLE)
+
+		
 		ZMK_MACRO(nfmt,
 		wait-ms = <0>;
 		tap-ms = <0>;
@@ -99,425 +119,6 @@ mm_##NAME: mm_##NAME {\
 		bindings
 		= <&macro_tap &kp A &kp L &kp E &kp X &kp A &kp N &kp D &kp E &kp R &kp DOT &kp K &kp L &kp A &kp U &kp T &kp K &kp E &kp DE_AT &kp S &kp V &kp A &kp DOT &kp D &kp E >
 		;)
-
-		ZMK_MACRO(unshift_question,
-		wait-ms = <0>;
-		tap-ms = <0>;
-		bindings
-		= <&macro_release &kp LSHFT>
-		, <&macro_tap &kp DE_QUESTION>
-		, <&macro_press &kp LSHFT>
-		, <&macro_pause_for_release>;)
-	
-		ZMK_MACRO(unshift_lt,
-		wait-ms = <0>;
-		tap-ms = <0>;
-		bindings
-		= <&macro_release &kp LSHFT>
-		, <&macro_tap &kp DE_LT>
-		, <&macro_press &kp LSHFT>
-		, <&macro_pause_for_release>;)
-	
-		ZMK_MACRO(unshift_mt,
-		wait-ms = <0>;
-		tap-ms = <0>;
-		bindings
-		= <&macro_release &kp LSHFT>
-		, <&macro_tap &kp DE_MT>
-		, <&macro_press &kp LSHFT>
-		, <&macro_pause_for_release>;)
-	
-		ZMK_MACRO(unshift_colon,
-		wait-ms = <0>;
-		tap-ms = <0>;
-		bindings
-		= <&macro_release &kp LSHFT>
-		, <&macro_tap &kp DE_COLON>
-		, <&macro_press &kp LSHFT>
-		, <&macro_pause_for_release>;)
-		
-		ZMK_MACRO(unshift_underscore,
-		wait-ms = <0>;
-		tap-ms = <0>;
-		bindings
-		= <&macro_release &kp LSHFT>
-		, <&macro_tap &kp DE_UNDERSCORE>
-		, <&macro_press &kp LSHFT>
-		, <&macro_pause_for_release>;)
-
-		ZMK_MACRO(unshift_plus,
-		wait-ms = <0>;
-		tap-ms = <0>;
-		bindings
-		= <&macro_release &kp LSHFT>
-		, <&macro_tap &kp DE_PLUS>
-		, <&macro_press &kp LSHFT>
-		, <&macro_pause_for_release>;)
-		
-
-		ZMK_MACRO(unshift_excl,
-		wait-ms = <0>;
-		tap-ms = <0>;
-		bindings
-		= <&macro_release &kp LSHFT>
-		, <&macro_tap &kp DE_EXCL>
-		, <&macro_press &kp LSHFT>
-		, <&macro_pause_for_release>;)
-		
-		ZMK_MACRO(unshift_hash,
-		wait-ms = <0>;
-		tap-ms = <0>;
-		bindings
-		= <&macro_release &kp LSHFT>
-		, <&macro_tap &kp DE_HASH>
-		, <&macro_press &kp LSHFT>
-		, <&macro_pause_for_release>;)
-		
-		ZMK_MACRO(unshift_usd,
-		wait-ms = <0>;
-		tap-ms = <0>;
-		bindings
-		= <&macro_release &kp LSHFT>
-		, <&macro_tap &kp DE_USD>
-		, <&macro_press &kp LSHFT>
-		, <&macro_pause_for_release>;)
-		
-		ZMK_MACRO(unshift_perc,
-		wait-ms = <0>;
-		tap-ms = <0>;
-		bindings
-		= <&macro_release &kp LSHFT>
-		, <&macro_tap &kp DE_PERCT>
-		, <&macro_press &kp LSHFT>
-		, <&macro_pause_for_release>;) 
-		
-		ZMK_MACRO(unshift_crrt,
-		wait-ms = <0>;
-		tap-ms = <0>;
-		bindings
-		= <&macro_release &kp LSHFT>
-		, <&macro_tap &kp DE_CRRT>
-		, <&macro_press &kp LSHFT>
-		, <&macro_pause_for_release>;)
-		
-		ZMK_MACRO(unshift_ampst,
-		wait-ms = <0>;
-		tap-ms = <0>;
-		bindings
-		= <&macro_release &kp LSHFT>
-		, <&macro_tap &kp DE_AMPST>
-		, <&macro_press &kp LSHFT>
-		, <&macro_pause_for_release>;)
-		
-		ZMK_MACRO(unshift_asrsk,
-		wait-ms = <0>;
-		tap-ms = <0>;
-		bindings
-		= <&macro_release &kp LSHFT>
-		, <&macro_tap &kp DE_ASRSK>
-		, <&macro_press &kp LSHFT>
-		, <&macro_pause_for_release>;) 
-		
-		ZMK_MACRO(unshift_quotedouble,
-		wait-ms = <0>;
-		tap-ms = <0>;
-		bindings
-		= <&macro_release &kp LSHFT>
-		, <&macro_tap &kp DE_QUOTEDOUBLE>
-		, <&macro_press &kp LSHFT>
-		, <&macro_pause_for_release>;) 
-		
-		ZMK_MACRO(unshift_quotesingle,
-		wait-ms = <0>;
-		tap-ms = <0>;
-		bindings
-		= <&macro_release &kp LSHFT>
-		, <&macro_tap &kp DE_QUOTESINGLE>
-		, <&macro_press &kp LSHFT>
-		, <&macro_pause_for_release>;) 
-		
-		ZMK_MACRO(unshift_backtick,
-		wait-ms = <0>;
-		tap-ms = <0>;
-		bindings
-		= <&macro_release &kp LSHFT>
-		, <&macro_tap &kp DE_BACKTICK>
-		, <&macro_press &kp LSHFT>
-		, <&macro_pause_for_release>;) 
-		
-		ZMK_MACRO(unshift_backtick,
-		wait-ms = <0>;
-		tap-ms = <0>;
-		bindings
-		= <&macro_release &kp LSHFT>
-		, <&macro_tap &kp DE_BACKTICK>
-		, <&macro_press &kp LSHFT>
-		, <&macro_pause_for_release>;) 
-		
-
-
-		ZMK_MACRO(unshift_brl_crl,
-		wait-ms = <0>;
-		tap-ms = <0>;
-		bindings
-		= <&macro_release &kp LSHFT>
-		, <&macro_tap &kp DE_BRL_CRL>
-		, <&macro_press &kp LSHFT>
-		, <&macro_pause_for_release>;) 
-		
-		ZMK_MACRO(unshift_brl_sqr,
-		wait-ms = <0>;
-		tap-ms = <0>;
-		bindings
-		= <&macro_release &kp LSHFT>
-		, <&macro_tap &kp DE_BRL_SQR>
-		, <&macro_press &kp LSHFT>
-		, <&macro_pause_for_release>;) 
-
-		ZMK_MACRO(unshift_brr_crl,
-		wait-ms = <0>;
-		tap-ms = <0>;
-		bindings
-		= <&macro_release &kp LSHFT>
-		, <&macro_tap &kp DE_BRR_CRL>
-		, <&macro_press &kp LSHFT>
-		, <&macro_pause_for_release>;) 
-
-		ZMK_MACRO(unshift_brr_sqr,
-		wait-ms = <0>;
-		tap-ms = <0>;
-		bindings
-		= <&macro_release &kp LSHFT>
-		, <&macro_tap &kp DE_BRR_SQR>
-		, <&macro_press &kp LSHFT>
-		, <&macro_pause_for_release>;) 
-
-		
-		
-		
-		
-		 MOD_MORPH_NOSHIFT_MACRO(comma_lt, COMMA, DE_LT)
-
-		 mm_comma: mm_comma {
-			  compatible = "zmk,behavior-mod-morph";
-			  label = "mm_comma";
-			  #binding-cells = <0>;
-			  bindings = <&kp COMMA>, <&unshift_lt>;
-			  mods = <(MOD_LSFT)>;
-	    	 }; 
-		 
-		 mm_dot: mm_dot {
-			  compatible = "zmk,behavior-mod-morph";
-			  label = "mm_dot";
-			  #binding-cells = <0>;
-			  bindings = <&kp DOT>, <&unshift_mt>;
-			  mods = <(MOD_LSFT)>;
-	    	 }; 
-		 
-		 mm_slash: mm_slash {
-			  compatible = "zmk,behavior-mod-morph";
-			  label = "mm_slash";
-			  #binding-cells = <0>;
-			  bindings = <&tdslash>, <&unshift_question>;
-			  mods = <(MOD_LSFT)>;
-	    	 }; 
-
-		 mm_semicolon: mm_semicolon {
-			  compatible = "zmk,behavior-mod-morph";
-			  label = "mm_semicolon";
-			  #binding-cells = <0>;
-			  bindings = <&kp DE_SEMICOLON>, <&unshift_colon>;
-			  mods = <(MOD_LSFT)>;
-	    	 }; 
-
-
-		 mm_minus: mm_minus {
-			  compatible = "zmk,behavior-mod-morph";
-			  label = "mm_minus";
-			  #binding-cells = <0>;
-			  bindings = <&kp DE_MINUS>, <&unshift_underscore>;
-			  mods = <(MOD_LSFT)>;
-	    	 }; 
-		 
-		 
-		 mm_equal: mm_equal {
-			  compatible = "zmk,behavior-mod-morph";
-			  label = "mm_equal";
-			  #binding-cells = <0>;
-			  bindings = <&kp DE_EQUAL>, <&unshift_plus>;
-			  mods = <(MOD_LSFT)>;
-	    	 }; 
-		 
-
-		 mm_1: mm_1 {
-			  compatible = "zmk,behavior-mod-morph";
-			  label = "mm_1";
-			  #binding-cells = <0>;
-			  bindings = <&kp N1>, <&unshift_excl>;
-			  mods = <(MOD_LSFT)>;
-	    	 }; 
-		 mm_2: mm_2 {
-			  compatible = "zmk,behavior-mod-morph";
-			  label = "mm_2";
-			  #binding-cells = <0>;
-			  bindings = <&kp N2>, <&tdquote>;
-			  mods = <(MOD_LSFT)>;
-	    	 }; 
-		 mm_3: mm_3 {
-			  compatible = "zmk,behavior-mod-morph";
-			  label = "mm_3";
-			  #binding-cells = <0>;
-			  bindings = <&kp N3>, <&unshift_hash>;
-			  mods = <(MOD_LSFT)>;
-	    	 }; 
-		mm_4: mm_4 {
-			  compatible = "zmk,behavior-mod-morph";
-			  label = "mm_4";
-			  #binding-cells = <0>;
-			  bindings = <&kp N4>, <&unshift_usd>;
-			  mods = <(MOD_LSFT)>;
-	    	 };  
-		 mm_5: mm_5 {
-			  compatible = "zmk,behavior-mod-morph";
-			  label = "mm_5";
-			  #binding-cells = <0>;
-			  bindings = <&kp N5>, <&unshift_perc>;
-			  mods = <(MOD_LSFT)>;
-	    	 };  
-		 mm_6: mm_6 {
-			  compatible = "zmk,behavior-mod-morph";
-			  label = "mm_6";
-			  #binding-cells = <0>;
-			  bindings = <&kp N6>, <&unshift_crrt>;
-			  mods = <(MOD_LSFT)>;
-	    	 };  
-		 mm_7: mm_7 {
-			  compatible = "zmk,behavior-mod-morph";
-			  label = "mm_7";
-			  #binding-cells = <0>;
-			  bindings = <&kp N7>, <&unshift_ampst>;
-			  mods = <(MOD_LSFT)>;
-	    	 };  
-		 mm_8: mm_8 {
-			  compatible = "zmk,behavior-mod-morph";
-			  label = "mm_8";
-			  #binding-cells = <0>;
-			  bindings = <&kp N8>, <&unshift_asrsk>;
-			  mods = <(MOD_LSFT)>;
-	    	 }; 
-
-		 mm_9: mm_9 {
-			  compatible = "zmk,behavior-mod-morph";
-			  label = "mm_9";
-			  #binding-cells = <0>;
-			  bindings = <&kp N9>, <&tdbrl>;
-			  mods = <(MOD_LSFT)>;
-	    	 }; 
-
-		 mm_0: mm_0 {
-			  compatible = "zmk,behavior-mod-morph";
-			  label = "mm_0";
-			  #binding-cells = <0>;
-			  bindings = <&kp N0>, <&tdbrr>;
-			  mods = <(MOD_LSFT)>;
-	    	 }; 
-
-
-		tdae: tdae {
-		    compatible = "zmk,behavior-tap-dance";
-		    label = "tdae";
-		    #binding-cells = <0>;
-		    tapping-term-ms = <150>;
-		    bindings = <&kp A>, <&kp DE_AE>;
-		};
-		tdoe: tdoe {
-		    compatible = "zmk,behavior-tap-dance";
-		    label = "tdoe";
-		    #binding-cells = <0>;
-		    tapping-term-ms = <150>;
-		    bindings = <&kp O>, <&kp DE_OE>;
-		};
-		umlhold: umlhold {
-		    compatible = "zmk,behavior-hold-tap";
-		        flavor = "tap-preferred";
-
-		    label = "umlhold";
-		    #binding-cells = <2>;
-		    tapping-term-ms = <150>;
-		    bindings = <&kp>, <&kp>;
-		};
-		tdue: tdue {
-		    compatible = "zmk,behavior-tap-dance";
-		    label = "tdue";
-		    #binding-cells = <0>;
-		    tapping-term-ms = <150>;
-		    bindings = <&kp U>, <&kp DE_UE>;
-		};
-		
-		tdss: tdss {
-		    compatible = "zmk,behavior-tap-dance";
-		    label = "tdss";
-		    #binding-cells = <0>;
-		    tapping-term-ms = <150>;
-		    bindings = <&kp S>, <&kp DE_SS>;
-		};
-		
-		tdplus: tdplus {
-		    compatible = "zmk,behavior-tap-dance";
-		    label = "tdplus";
-		    #binding-cells = <0>;
-		    tapping-term-ms = <200>;
-		    bindings = <&kp DE_PLUS>, <&kp DE_EQUAL>;
-		};
-		tdminus: tdminus {
-		    compatible = "zmk,behavior-tap-dance";
-		    label = "tdminus";
-		    #binding-cells = <0>;
-		    tapping-term-ms = <200>;
-		    bindings = <&kp DE_MINUS>, <&kp DE_UNDERSCORE>;
-		};
-		
-		tdslash: tdslash {
-		    compatible = "zmk,behavior-tap-dance";
-		    label = "tdslash";
-		    #binding-cells = <0>;
-		    tapping-term-ms = <200>;
-		    bindings = <&kp DE_SLASH>, <&kp DE_PIPE>, <&kp DE_BACKSLASH>;
-
-		};	
-		tdquote: tdquote {
-		    compatible = "zmk,behavior-tap-dance";
-		    label = "tdquote";
-		    #binding-cells = <0>;
-		    tapping-term-ms = <200>;
-		    bindings = <&unshift_quotesingle>, <&unshift_quotedouble>, <&unshift_backtick>;
-		};	
-		
-		tdbrl: tdbrl {
-		    compatible = "zmk,behavior-tap-dance";
-		    label = "tdbrl";
-		    #binding-cells = <0>;
-		    tapping-term-ms = <200>;
-		    bindings = <&kp DE_BRL_RND>, <&unshift_brl_crl>, <&unshift_brl_sqr>;
-
-		};	
-		
-		tdbrr: tdbrr {
-		    compatible = "zmk,behavior-tap-dance";
-		    label = "tdbrr";
-		    #binding-cells = <0>;
-		    tapping-term-ms = <200>;
-		    bindings = <&kp DE_BRR_RND>, <&unshift_brr_crl>, <&unshift_brr_sqr>;
-
-		};	
-		tdq: td {
-		    compatible = "zmk,behavior-tap-dance";
-		    label = "tdq";
-		    #binding-cells = <0>;
-		    tapping-term-ms = <200>;
-		    bindings = <&kp Q>, <&kp TAB>;
-
-		};	
 	};
 
 
@@ -529,7 +130,7 @@ mm_##NAME: mm_##NAME {\
             // |   1   |  2   |  3   |  4   |  5   |   6   |  7    |  8   |  9   |  0   |   -   |  +    |
             // | TAB   |  Q   |  W   |  E   |  R   |  T   |   Z   |  U    |  I   |  O   |   P   |  BS   |
             // | ESC   |  A   |  S   |  D   |  F   |  G   |   H   |  J    |  K   |  L   |   ;   |  ENT  |
-            // | SHIFT |  Y   |  X   |  C   |  V   |  B   |   N   |  M    |  ,   |  .   |  /|\  | SHIFT |
+            // | SHIFT |  Y   |  X   |  C   |  V   |  B   |   N   |  M    |  ,   |  .   |  /    | SHIFT |
             // | CTRL  | GUI  | ALT  | CMD  | LOWR | SPACE| SPACE |  LOWR | RALT | PGUP | PGDN  | DEL   |
 
 
@@ -537,7 +138,7 @@ mm_##NAME: mm_##NAME {\
                 &mm_1      &kp N2       &mm_3       &mm_4    &mm_5      &mm_6       &mm_7       &mm_8   &mm_9       &mm_0       &mm_minus      &mm_equal 
                 &kp TAB    &kp Q        &kp W       &kp E    &kp R      &kp T       &kp Y       &kp U   &kp I       &kp O       &kp P          &kp BSPC
                 &kp ESC    &kp A        &kp S       &kp D    &kp F      &kp G       &kp H       &kp J   &kp K       &kp L       &mm_semicolon  &kp RET
-                &kp LSHFT  &kp Z        &kp X       &kp C    &kp V      &kp B       &kp N       &kp M   &mm_comma_lt   &mm_dot     &mm_slash      &tdquote
+                &kp LSHFT  &kp Z        &kp X       &kp C    &kp V      &kp B       &kp N       &kp M   &mm_comma   &mm_dot     &mm_slash      &mm_quote
                 &kp LCTRL  &kp LGUI     &kp LALT    &mo MACRO &mo LOWER &kp SPACE  &kp SPACE    &mo LOWER &kp RALT  &kp PG_UP   &kp PG_DN      &kp DEL 
             >;
         };
@@ -547,13 +148,13 @@ mm_##NAME: mm_##NAME {\
             // |  F1   |  F2  |  F3  |  F4  |  F5  |  F6  |   F7  |  F8   |  F9  | F10  |  F11  |  F12  |
             // |       |      |      |      |      |      |       |       |      |      | PSCRN |       |
             // |       |      |      |      |      |      |   L   |  D    |  U   |  R   |       |       |
-            // |       |      |      |      |      |      | NFMT  |       |      |      |       |       |
+            // |       |      |      |      |      |      | NFMT  |       |      |      | | \   |       |
             // |       |      |      |      |      |      |       |       |      |      |       |       |
             bindings = <
                 &kp F1    &kp F2    &kp F3   &kp F4   &kp F5     &kp F6   &kp F7    &kp F8     &kp F9   &kp F10    &kp F11    &kp F12
                 &trans    &none     &none    &none    &none      &none    &none     &kp DE_UE  &none    &kp DE_OE  &kp PSCRN  &trans
                 &trans    &kp DE_AE &kp DE_SS &none    &none      &none    &kp LEFT  &kp DOWN   &kp UP   &kp RIGHT  &none      &trans
-                &trans    &bootloader &reset   &none    &none      &none    &none     &none      &none    &none      &none      &none
+                &trans    &bootloader &reset   &none    &none      &none    &none     &none      &none    &none      &mm_pipe  &none
                 &trans    &trans    &trans   &trans   &mo ADJUST &trans   &trans    &mo ADJUST &trans   &trans     &trans     &trans 
             >;
         };
