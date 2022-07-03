@@ -52,6 +52,34 @@
 #define DE_AT    	RA(Q)	
 
 
+#define str(s) #s
+
+#define MOD_MORPH_NOSHIFT_MACRO(NAME, KEY, MOD_KEY) \
+ZMK_MACRO(macro_##NAME,\
+   wait-ms = <0>;\
+   tap-ms = <0>;\
+   bindings\
+   = <&macro_release &kp LSHFT>\
+   , <&macro_tap &kp MOD_KEY>\
+   , <&macro_press &kp LSHFT>;)\
+\
+mm_##NAME: mm_##NAME {\
+   compatible = "zmk,behavior-mod-morph";\
+   label = str(NAME);\
+   #binding-cells = <0>;\
+   bindings = <&kp KEY>, <&macro_##NAME>;\
+   mods = <(MOD_LSFT|MOD_RSFT)>;\
+}; \
+
+#define MOD_MORPH(NAME, KEY, MOD_KEY) \
+  mm_##NAME: mm_##NAME { \
+    compatible = "zmk,behavior-mod-morph"; \
+    label = str(NAME); \
+    #binding-cells = <0>; \
+    bindings = <&kp KEY>, <&kp MOD_KEY>; \
+    mods = <(MOD_LSFT|MOD_RSFT)>; \
+  }; \
+
 
 
 / {
@@ -268,7 +296,8 @@
 		
 		
 		
-		
+		 MOD_MORPH_NOSHIFT_MACRO(comma_lt, COMMA, DE_LT)
+
 		 mm_comma: mm_comma {
 			  compatible = "zmk,behavior-mod-morph";
 			  label = "mm_comma";
@@ -508,7 +537,7 @@
                 &mm_1      &kp N2       &mm_3       &mm_4    &mm_5      &mm_6       &mm_7       &mm_8   &mm_9       &mm_0       &mm_minus      &mm_equal 
                 &kp TAB    &kp Q        &kp W       &kp E    &kp R      &kp T       &kp Y       &kp U   &kp I       &kp O       &kp P          &kp BSPC
                 &kp ESC    &kp A        &kp S       &kp D    &kp F      &kp G       &kp H       &kp J   &kp K       &kp L       &mm_semicolon  &kp RET
-                &kp LSHFT  &kp Z        &kp X       &kp C    &kp V      &kp B       &kp N       &kp M   &mm_comma   &mm_dot     &mm_slash      &tdquote
+                &kp LSHFT  &kp Z        &kp X       &kp C    &kp V      &kp B       &kp N       &kp M   &comma_lt   &mm_dot     &mm_slash      &tdquote
                 &kp LCTRL  &kp LGUI     &kp LALT    &mo MACRO &mo LOWER &kp SPACE  &kp SPACE    &mo LOWER &kp RALT  &kp PG_UP   &kp PG_DN      &kp DEL 
             >;
         };
