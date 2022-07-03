@@ -537,7 +537,7 @@ mm_##NAME: mm_##NAME {\
                 &mm_1      &kp N2       &mm_3       &mm_4    &mm_5      &mm_6       &mm_7       &mm_8   &mm_9       &mm_0       &mm_minus      &mm_equal 
                 &kp TAB    &kp Q        &kp W       &kp E    &kp R      &kp T       &kp Y       &kp U   &kp I       &kp O       &kp P          &kp BSPC
                 &kp ESC    &kp A        &kp S       &kp D    &kp F      &kp G       &kp H       &kp J   &kp K       &kp L       &mm_semicolon  &kp RET
-                &kp LSHFT  &kp Z        &kp X       &kp C    &kp V      &kp B       &kp N       &kp M   &comma_lt   &mm_dot     &mm_slash      &tdquote
+                &kp LSHFT  &kp Z        &kp X       &kp C    &kp V      &kp B       &kp N       &kp M   &mm_comma_lt   &mm_dot     &mm_slash      &tdquote
                 &kp LCTRL  &kp LGUI     &kp LALT    &mo MACRO &mo LOWER &kp SPACE  &kp SPACE    &mo LOWER &kp RALT  &kp PG_UP   &kp PG_DN      &kp DEL 
             >;
         };
