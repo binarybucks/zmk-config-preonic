@@ -89,7 +89,7 @@ mm_##NAME: mm_##NAME {\
     #binding-cells = <0>; \
     bindings = <&kp KEY>, <&kp MOD_KEY>; \
     mods = <(MOD_LSFT|MOD_RSFT)>; \
-    masked_mods = <(MOD_LSFT)>;
+    masked_mods = <(MOD_LSFT)>; \
 
   }; \
 
