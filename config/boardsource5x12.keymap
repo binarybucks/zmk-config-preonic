@@ -101,26 +101,26 @@ mm_##NAME: mm_##NAME {\
 		 MM_MASKEDLSHIFT(dot, DOT, DE_MT)
 		 MM_MASKEDLSHIFT(slash, DE_SLASH, DE_QUESTION)
 		 MM_MASKEDLSHIFT(semicolon, DE_SEMICOLON, DE_COLON)
+		 MM_MASKEDLSHIFT(pipe, DE_PIPE, DE_BACKSLASH)
 
-		 MOD_MORPH_NOSHIFT_MACRO(slash, DE_SLASH, DE_QUESTION)
-		 MOD_MORPH_NOSHIFT_MACRO(pipe, DE_PIPE, DE_BACKSLASH)
+		 MM_MASKEDLSHIFT(minus, DE_MINUS, DE_UNDERSCORE)
+		 MM_MASKEDLSHIFT(equal, DE_EQUAL, DE_PLUS)
+		 MM_MASKEDLSHIFT(quotesingle, DE_QUOTESINGLE, DE_BACKTICK)
 
-		 MOD_MORPH_NOSHIFT_MACRO(minus, DE_MINUS, DE_UNDERSCORE)
-		 MOD_MORPH_NOSHIFT_MACRO(equal, DE_EQUAL, DE_PLUS)
-		 MOD_MORPH_NOSHIFT_MACRO(1, N1, DE_EXCL)
-		 MOD_MORPH_NOSHIFT_MACRO(2, N2, DE_QUOTEDOUBLE)
-		 MOD_MORPH_NOSHIFT_MACRO(3, N3, DE_HASH)
-		 MOD_MORPH_NOSHIFT_MACRO(4, N4, DE_USD)
-		 MOD_MORPH_NOSHIFT_MACRO(5, N5, DE_PERCT)
-		 MOD_MORPH_NOSHIFT_MACRO(6, N6, DE_CRRT)
-		 MOD_MORPH_NOSHIFT_MACRO(7, N7, DE_AMPST)
-		 MOD_MORPH_NOSHIFT_MACRO(8, N8, DE_ASRSK)
-		 MOD_MORPH_NOSHIFT_MACRO(9, N9, DE_BRL_RND)
-		 MOD_MORPH_NOSHIFT_MACRO(0, N0, DE_BRR_RND)
-		 MOD_MORPH_NOSHIFT_MACRO(brl,DE_BRL_SQR, DE_BRL_CRL)
-		 MOD_MORPH_NOSHIFT_MACRO(brr,DE_BRR_SQR, DE_BRR_CRL)
+		 
+		 MM_MASKEDLSHIFT(1, N1, DE_EXCL)
+		 MM_MASKEDLSHIFT(2, N2, DE_QUOTEDOUBLE)
+		 MM_MASKEDLSHIFT(3, N3, DE_HASH)
+		 MM_MASKEDLSHIFT(4, N4, DE_USD)
+		 MM_MASKEDLSHIFT(5, N5, DE_PERCT)
+		 MM_MASKEDLSHIFT(6, N6, DE_CRRT)
+		 MM_MASKEDLSHIFT(7, N7, DE_AMPST)
+		 MM_MASKEDLSHIFT(8, N8, DE_ASRSK)
+		 MM_MASKEDLSHIFT(9, N9, DE_BRL_RND)
+		 MM_MASKEDLSHIFT(0, N0, DE_BRR_RND)
+		 MM_MASKEDLSHIFT(brl,DE_BRL_SQR, DE_BRL_CRL)
+		 MM_MASKEDLSHIFT(brr,DE_BRR_SQR, DE_BRR_CRL)
 
-		 MOD_MORPH_NOSHIFT_MACRO(quotesingle, DE_QUOTESINGLE, DE_BACKTICK)
 
 		    dottest: dottest {
         compatible = "zmk,behavior-mod-morph";
@@ -159,7 +159,7 @@ mm_##NAME: mm_##NAME {\
 
 
             bindings = <
-                &mm_1      &kp N2       &mm_3       &mm_4    &mm_5      &mm_6       &mm_7       &mm_8   &mm_9       &mm_0       &mm_minus      &mm_equal 
+                &mmms_1    &mmms_2      &mmms_3     &mmms_4  &mmms_5    &mmms_6     &mmms_7     &mmms_8 &mmms_9     &mmms_0     &mmms_minus      &mmms_equal 
                 &kp TAB    &kp Q        &kp W       &kp E    &kp R      &kp T       &kp Y       &kp U   &kp I       &kp O       &kp P          &kp BSPC
                 &kp ESC    &kp A        &kp S       &kp D    &kp F      &kp G       &kp H       &kp J   &kp K       &kp L       &mmms_semicolon  &kp RET
                 &kp LSHFT  &kp Z        &kp X       &kp C    &kp V      &kp B       &kp N       &kp M   &mmms_comma   &mmms_dot &mmms_slash      &mo ISODE
@@ -175,10 +175,10 @@ mm_##NAME: mm_##NAME {\
             // |       |      |      |      |      |      |  ~    |      |      | | \   |       |
             // |       |      |      |      |      |      |       |       |      |      |       |       |
             bindings = <
-                &none     &mm_quotesingle     &none    &none    &none      &none    &none     &none      &mm_brl   &mm_brr   &none      &trans
+                &none     &mmms_quotesingle     &none    &none    &none      &none    &none     &none      &mmms_brl   &mmms_brr   &none      &trans
                 &trans    &none     &none    &none    &none      &none    &none     &kp DE_UE  &none    &kp DE_OE  &kp PSCRN  &trans
                 &trans    &kp DE_AE &kp DE_SS &none    &none      &none    &kp LEFT  &kp DOWN   &kp UP   &kp RIGHT  &none      &trans
-                &trans    &bootloader &reset   &none    &none      &none    &kp DE_TILDE     &none      &none    &none      &mm_pipe  &none
+                &trans    &bootloader &reset   &none    &none      &none    &kp DE_TILDE     &none      &none    &none      &mmms_pipe  &none
                 &trans    &trans    &trans   &trans   &mo ADJUST &trans   &trans    &mo ADJUST &trans   &trans     &trans     &trans 
             >;
         };
