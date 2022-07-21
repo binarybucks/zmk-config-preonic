@@ -99,7 +99,6 @@ mm_##NAME: mm_##NAME {\
 	behaviors {
 		 MOD_MORPH_NOSHIFT_MACRO(comma, COMMA, DE_LT)
 		 MOD_MORPH_NOSHIFT_MACRO(dot, DOT, DE_MT)
-		 MOD_MORPH_MASKEDSHIFT(dot, DOT, DE_MT)
 
 		 MOD_MORPH_NOSHIFT_MACRO(slash, DE_SLASH, DE_QUESTION)
 		 MOD_MORPH_NOSHIFT_MACRO(pipe, DE_PIPE, DE_BACKSLASH)
@@ -121,8 +120,16 @@ mm_##NAME: mm_##NAME {\
 		 MOD_MORPH_NOSHIFT_MACRO(brr,DE_BRR_SQR, DE_BRR_CRL)
 
 		 MOD_MORPH_NOSHIFT_MACRO(quotesingle, DE_QUOTESINGLE, DE_BACKTICK)
+		 MOD_MORPH_MASKEDSHIFT(dottest, DOT, DE_MT)
 
-		
+		    dottest: grave_escape {
+        compatible = "zmk,behavior-mod-morph";
+        label = "dottest";
+        #binding-cells = <0>;
+        bindings = <&kp DOT>, <&kp DE_MT>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+    
 		ZMK_MACRO(nfmt,
 		wait-ms = <0>;
 		tap-ms = <0>;
@@ -155,7 +162,7 @@ mm_##NAME: mm_##NAME {\
                 &mm_1      &kp N2       &mm_3       &mm_4    &mm_5      &mm_6       &mm_7       &mm_8   &mm_9       &mm_0       &mm_minus      &mm_equal 
                 &kp TAB    &kp Q        &kp W       &kp E    &kp R      &kp T       &kp Y       &kp U   &kp I       &kp O       &kp P          &kp BSPC
                 &kp ESC    &kp A        &kp S       &kp D    &kp F      &kp G       &kp H       &kp J   &kp K       &kp L       &mm_semicolon  &kp RET
-                &kp LSHFT  &kp Z        &kp X       &kp C    &kp V      &kp B       &kp N       &kp M   &mm_comma   &mm_dot     &mm_slash      &mo ISODE
+                &kp LSHFT  &kp Z        &kp X       &kp C    &kp V      &kp B       &kp N       &kp M   &mm_comma   &dottest     &mm_slash      &mo ISODE
                 &kp LCTRL  &kp LGUI     &kp LALT    &mo MACRO &mo LOWER &kp SPACE  &kp SPACE    &mo LOWER &kp RALT  &kp PG_UP   &kp PG_DN      &kp DEL 
             >;
         };
