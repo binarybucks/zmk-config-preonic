@@ -90,7 +90,6 @@ mm_##NAME: mm_##NAME {\
     bindings = <&kp KEY>, <&kp MOD_KEY>; \
     mods = <(MOD_LSFT|MOD_RSFT)>; \
     masked_mods = <(MOD_LSFT)>; \
-
   }; \
 
 
