@@ -19,7 +19,7 @@
 #define DE_SLASH        RS(N7)
 #define DE_QUESTION     RS(MINUS)
 #define DE_LT    	NON_US_BACKSLASH
-#define DE_MT    	RS(DE_LT)
+#define DE_MT    	LS(DE_LT)
 
 #define DE_COLON    	RS(DOT)
 #define DE_SEMICOLON    RS(COMMA)
@@ -120,9 +120,8 @@ mm_##NAME: mm_##NAME {\
 		 MOD_MORPH_NOSHIFT_MACRO(brr,DE_BRR_SQR, DE_BRR_CRL)
 
 		 MOD_MORPH_NOSHIFT_MACRO(quotesingle, DE_QUOTESINGLE, DE_BACKTICK)
-		 MOD_MORPH_MASKEDSHIFT(dottest, DOT, DE_MT)
 
-		    dottest: grave_escape {
+		    dottest: dottest {
         compatible = "zmk,behavior-mod-morph";
         label = "dottest";
         #binding-cells = <0>;
