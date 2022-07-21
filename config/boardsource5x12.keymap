@@ -16,10 +16,10 @@
 #define ISODE     4
 #define ISODESPECIAL     5
 
-#define DE_SLASH        LS(N7)
-#define DE_QUESTION     LS(MINUS)
+#define DE_SLASH        RS(N7)
+#define DE_QUESTION     RS(MINUS)
 #define DE_LT    	NON_US_BACKSLASH
-#define DE_MT    	LS(DE_LT)
+#define DE_MT    	RS(DE_LT)
 
 #define DE_COLON    	RS(DOT)
 #define DE_SEMICOLON    RS(COMMA)
@@ -82,7 +82,7 @@ mm_##NAME: mm_##NAME {\
     mods = <(MOD_LSFT|MOD_RSFT)>; \
   }; \
 
-#define MM_MASKEDSHIFT(NAME, KEY, MOD_KEY) \
+#define MM_MASKEDLSHIFT(NAME, KEY, MOD_KEY) \
   mmms_##NAME: mmms_##NAME { \
     compatible = "zmk,behavior-mod-morph"; \
     label = str(NAME); \
@@ -97,10 +97,10 @@ mm_##NAME: mm_##NAME {\
 / {
 
 	behaviors {
-		 MM_MASKEDSHIFT(comma, COMMA, DE_LT)
-		 MM_MASKEDSHIFT(dot, DOT, DE_MT)
-		 MM_MASKEDSHIFT(slash, DE_SLASH, DE_QUESTION)
-		 MM_MASKEDSHIFT(semicolon, DE_SEMICOLON, DE_COLON)
+		 MM_MASKEDLSHIFT(comma, COMMA, DE_LT)
+		 MM_MASKEDLSHIFT(dot, DOT, DE_MT)
+		 MM_MASKEDLSHIFT(slash, DE_SLASH, DE_QUESTION)
+		 MM_MASKEDLSHIFT(semicolon, DE_SEMICOLON, DE_COLON)
 
 		 MOD_MORPH_NOSHIFT_MACRO(slash, DE_SLASH, DE_QUESTION)
 		 MOD_MORPH_NOSHIFT_MACRO(pipe, DE_PIPE, DE_BACKSLASH)
