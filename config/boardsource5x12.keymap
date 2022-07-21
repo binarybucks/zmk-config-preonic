@@ -82,6 +82,17 @@ mm_##NAME: mm_##NAME {\
     mods = <(MOD_LSFT|MOD_RSFT)>; \
   }; \
 
+#define MOD_MORPH_MASKEDSHIFT(NAME, KEY, MOD_KEY) \
+  mm_##NAME: mm_##NAME { \
+    compatible = "zmk,behavior-mod-morph"; \
+    label = str(NAME); \
+    #binding-cells = <0>; \
+    bindings = <&kp KEY>, <&kp MOD_KEY>; \
+    mods = <(MOD_LSFT|MOD_RSFT)>; \
+    masked_mods = <(MOD_LSFT)>;
+
+  }; \
+
 
 
 / {
@@ -89,6 +100,8 @@ mm_##NAME: mm_##NAME {\
 	behaviors {
 		 MOD_MORPH_NOSHIFT_MACRO(comma, COMMA, DE_LT)
 		 MOD_MORPH_NOSHIFT_MACRO(dot, DOT, DE_MT)
+		 MOD_MORPH_MASKEDSHIFT(dot, DOT, DE_MT)
+
 		 MOD_MORPH_NOSHIFT_MACRO(slash, DE_SLASH, DE_QUESTION)
 		 MOD_MORPH_NOSHIFT_MACRO(pipe, DE_PIPE, DE_BACKSLASH)
 
