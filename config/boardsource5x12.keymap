@@ -224,7 +224,7 @@ mm_##NAME: mm_##NAME {\
                 &kp N1     &kp N2       &kp N3      &kp N4   &kp N5     &kp N6      &kp N7      &kp N8     &kp N9       &kp N0       &none           &none 
                 &trans     &trans       &trans      &trans   &trans     &trans      &trans      &trans     &trans       &trans       &trans          &trans
                 &trans     &trans       &trans      &trans   &trans     &trans	    &trans      &trans     &trans       &trans       &none   	     &trans
-                &trans     &trans       &trans      &trans   &trans     &trans      &trans      &trans     &trans       &trans       &none           &none
+                &trans     &trans       &trans      &trans   &trans     &trans      &trans      &trans     &trans       &trans       &none           &mo ISODE
                 &trans     &trans       &trans      &none    &mo ISODESPECIAL &trans &trans     &none	   &trans       &trans       &trans          &trans 
             >;
         };
