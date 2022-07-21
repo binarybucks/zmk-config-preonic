@@ -16,8 +16,8 @@
 #define ISODE     4
 #define ISODESPECIAL     5
 
-#define DE_SLASH        RS(N7)
-#define DE_QUESTION     RS(MINUS)
+#define DE_SLASH        LS(N7)
+#define DE_QUESTION     LS(MINUS)
 #define DE_LT    	NON_US_BACKSLASH
 #define DE_MT    	LS(DE_LT)
 
@@ -82,13 +82,13 @@ mm_##NAME: mm_##NAME {\
     mods = <(MOD_LSFT|MOD_RSFT)>; \
   }; \
 
-#define MOD_MORPH_MASKEDSHIFT(NAME, KEY, MOD_KEY) \
-  mm_##NAME: mm_##NAME { \
+#define MM_MASKEDSHIFT(NAME, KEY, MOD_KEY) \
+  ##NAME: ##NAME { \
     compatible = "zmk,behavior-mod-morph"; \
     label = str(NAME); \
     #binding-cells = <0>; \
     bindings = <&kp KEY>, <&kp MOD_KEY>; \
-    mods = <(MOD_LSFT|MOD_RSFT)>; \
+    mods = <(MOD_LSFT)>; \
     masked_mods = <(MOD_LSFT)>; \
   }; \
 
@@ -97,13 +97,14 @@ mm_##NAME: mm_##NAME {\
 / {
 
 	behaviors {
-		 MOD_MORPH_NOSHIFT_MACRO(comma, COMMA, DE_LT)
-		 MOD_MORPH_NOSHIFT_MACRO(dot, DOT, DE_MT)
+		 MM_MASKEDSHIFT(mmms_comma, COMMA, DE_LT)
+		 MM_MASKEDSHIFT(mmms_dot, DOT, DE_MT)
+		 MM_MASKEDSHIFT(mmms_slash, DE_SLASH, DE_QUESTION)
+		 MM_MASKEDSHIFT(mmms_semicolon, DE_SEMICOLON, DE_COLON)
 
 		 MOD_MORPH_NOSHIFT_MACRO(slash, DE_SLASH, DE_QUESTION)
 		 MOD_MORPH_NOSHIFT_MACRO(pipe, DE_PIPE, DE_BACKSLASH)
 
-		 MOD_MORPH_NOSHIFT_MACRO(semicolon, DE_SEMICOLON, DE_COLON)
 		 MOD_MORPH_NOSHIFT_MACRO(minus, DE_MINUS, DE_UNDERSCORE)
 		 MOD_MORPH_NOSHIFT_MACRO(equal, DE_EQUAL, DE_PLUS)
 		 MOD_MORPH_NOSHIFT_MACRO(1, N1, DE_EXCL)
@@ -160,8 +161,8 @@ mm_##NAME: mm_##NAME {\
             bindings = <
                 &mm_1      &kp N2       &mm_3       &mm_4    &mm_5      &mm_6       &mm_7       &mm_8   &mm_9       &mm_0       &mm_minus      &mm_equal 
                 &kp TAB    &kp Q        &kp W       &kp E    &kp R      &kp T       &kp Y       &kp U   &kp I       &kp O       &kp P          &kp BSPC
-                &kp ESC    &kp A        &kp S       &kp D    &kp F      &kp G       &kp H       &kp J   &kp K       &kp L       &mm_semicolon  &kp RET
-                &kp LSHFT  &kp Z        &kp X       &kp C    &kp V      &kp B       &kp N       &kp M   &mm_comma   &dottest     &mm_slash      &mo ISODE
+                &kp ESC    &kp A        &kp S       &kp D    &kp F      &kp G       &kp H       &kp J   &kp K       &kp L       &mmms_semicolon  &kp RET
+                &kp LSHFT  &kp Z        &kp X       &kp C    &kp V      &kp B       &kp N       &kp M   &mmms_comma   &mmms_dot &mmms_slash      &mo ISODE
                 &kp LCTRL  &kp LGUI     &kp LALT    &mo MACRO &mo LOWER &kp SPACE  &kp SPACE    &mo LOWER &kp RALT  &kp PG_UP   &kp PG_DN      &kp DEL 
             >;
         };
