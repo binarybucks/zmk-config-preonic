@@ -141,9 +141,13 @@ mm_##NAME: mm_##NAME {\
             		label = "macro_de_mt";
            		 compatible = "zmk,behavior-macro";
             		#binding-cells = <0>;
+			wait-ms = <10>;
             		bindings
                 	= <&macro_press &kp RSHIFT>
-                , <&macro_tap &kp DE_LT>
+			, <&macro_wait_time 30>
+                	, <&macro_tap &kp DE_LT
+						, <&macro_wait_time 30>
+
                 , <&macro_release &kp RSHIFT>;
        		};
 
