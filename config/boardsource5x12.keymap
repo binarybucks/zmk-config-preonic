@@ -92,13 +92,22 @@ mm_##NAME: mm_##NAME {\
     masked_mods = <(MOD_LSFT)>; \
   }; \
 
+#define MM_MASKEDLSHIFT_FORMARCO(NAME, KEY, MORPHMACRO) \
+  mmms_##NAME: mmms_##NAME { \
+    compatible = "zmk,behavior-mod-morph"; \
+    label = str(NAME); \
+    #binding-cells = <0>; \
+    bindings = <&kp KEY>, <&kp MOD_KEY>; \
+    mods = <(MOD_LSFT)>; \
+    masked_mods = <(MOD_LSFT)>; \
+  }; \
+
 
 
 / {
 
 	behaviors {
 		 MM_MASKEDLSHIFT(comma, COMMA, DE_LT)
-		 MOD_MORPH_NOSHIFT_MACRO(dot, DOT, DE_MT)
 		 MM_MASKEDLSHIFT(slash, DE_SLASH, DE_QUESTION)
 		 MM_MASKEDLSHIFT(semicolon, DE_SEMICOLON, DE_COLON)
 		 MM_MASKEDLSHIFT(pipe, DE_PIPE, DE_BACKSLASH)
@@ -121,16 +130,7 @@ mm_##NAME: mm_##NAME {\
 		 MM_MASKEDLSHIFT(brl,DE_BRL_SQR, DE_BRL_CRL)
 		 MM_MASKEDLSHIFT(brr,DE_BRR_SQR, DE_BRR_CRL)
 
-
-		    dottest: dottest {
-        compatible = "zmk,behavior-mod-morph";
-        label = "dottest";
-        #binding-cells = <0>;
-        bindings = <&kp DOT>, <&kp DE_MT>;
-        mods = <(MOD_LSFT|MOD_RSFT)>;
-    };
-    
-		ZMK_MACRO(nfmt,
+  		ZMK_MACRO(nfmt,
 		wait-ms = <0>;
 		tap-ms = <0>;
 		bindings
@@ -143,6 +143,33 @@ mm_##NAME: mm_##NAME {\
 		bindings
 		= <&macro_tap &kp A &kp L &kp E &kp X &kp A &kp N &kp D &kp E &kp R &kp DOT &kp K &kp L &kp A &kp U &kp T &kp K &kp E &kp DE_AT &kp S &kp V &kp A &kp DOT &kp D &kp E >
 		;)
+		
+		
+		
+			 macro_de_mt: macro_de_mt {
+            		label = "macro_de_mt";
+           		 compatible = "zmk,behavior-macro";
+            		#binding-cells = <0>;
+            		bindings
+                	= <&macro_press &kp RSHIFT>
+                , <&macro_tap &kp DE_LT>
+                , <&macro_release &kp RSHIFT>;
+       		};
+
+
+		    dottest: dottest {
+        compatible = "zmk,behavior-mod-morph";
+        label = "dottest";
+        #binding-cells = <0>;
+        bindings = <&kp DOT>, <&macro_de_mt>;
+        mods = <(MOD_LSFT)>;
+        masked_mods = <(MOD_LSFT)>; 
+
+    };
+    
+    
+    
+	
 	};
 
 
