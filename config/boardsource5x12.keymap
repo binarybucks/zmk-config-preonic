@@ -92,15 +92,6 @@ mm_##NAME: mm_##NAME {\
     masked_mods = <(MOD_LSFT)>; \
   }; \
 
-#define MM_MASKEDLSHIFT_FORMARCO(NAME, KEY, MORPHMACRO) \
-  mmms_##NAME: mmms_##NAME { \
-    compatible = "zmk,behavior-mod-morph"; \
-    label = str(NAME); \
-    #binding-cells = <0>; \
-    bindings = <&kp KEY>, <&kp MOD_KEY>; \
-    mods = <(MOD_LSFT)>; \
-    masked_mods = <(MOD_LSFT)>; \
-  }; \
 
 
 
@@ -189,7 +180,7 @@ mm_##NAME: mm_##NAME {\
                 &mmms_1    &mmms_2      &mmms_3     &mmms_4  &mmms_5    &mmms_6     &mmms_7     &mmms_8 &mmms_9     &mmms_0     &mmms_minus      &mmms_equal 
                 &kp TAB    &kp Q        &kp W       &kp E    &kp R      &kp T       &kp Y       &kp U   &kp I       &kp O       &kp P          &kp BSPC
                 &kp ESC    &kp A        &kp S       &kp D    &kp F      &kp G       &kp H       &kp J   &kp K       &kp L       &mmms_semicolon  &kp RET
-                &kp LSHFT  &kp Z        &kp X       &kp C    &kp V      &kp B       &kp N       &kp M   &mmms_comma   &mm_dot &mmms_slash      &mo ISODE
+                &kp LSHFT  &kp Z        &kp X       &kp C    &kp V      &kp B       &kp N       &kp M   &mmms_comma   &dottest &mmms_slash      &mo ISODE
                 &kp LCTRL  &kp LGUI     &kp LALT    &mo MACRO &mo LOWER &kp SPACE  &kp SPACE    &mo LOWER &kp RALT  &kp PG_UP   &kp PG_DN      &kp DEL 
             >;
         };
