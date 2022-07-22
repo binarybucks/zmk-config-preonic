@@ -58,7 +58,7 @@
 
 #define MOD_MORPH_NOSHIFT_MACRO(NAME, KEY, MOD_KEY) \
 ZMK_MACRO(macro_##NAME,\
-   wait-ms = <0>;\
+   wait-ms = <16>;\
    tap-ms = <0>;\
    bindings\
    = <&macro_release &kp LSHFT>\
