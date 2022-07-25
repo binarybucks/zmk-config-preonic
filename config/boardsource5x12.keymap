@@ -137,34 +137,28 @@ mm_##NAME: mm_##NAME {\
 		
 		
 		
-			 macro_de_mt: macro_de_mt {
+		macro_de_mt: macro_de_mt {
             		label = "macro_de_mt";
-           		 compatible = "zmk,behavior-macro";
+           		compatible = "zmk,behavior-macro";
             		#binding-cells = <0>;
 			wait-ms = <10>;
             		bindings
                 	= <&macro_press &kp RSHIFT>
 			, <&macro_wait_time 30>
-                	, <&macro_tap &kp DE_LT
-						, <&macro_wait_time 30>
-
-                , <&macro_release &kp RSHIFT>;
+                	, <&macro_tap &kp DE_LT>
+			, <&macro_wait_time 30>
+			, <&macro_release &kp RSHIFT>;
        		};
 
 
-		    dottest: dottest {
-        compatible = "zmk,behavior-mod-morph";
-        label = "dottest";
-        #binding-cells = <0>;
-        bindings = <&kp DOT>, <&macro_de_mt>;
-        mods = <(MOD_LSFT)>;
-        masked_mods = <(MOD_LSFT)>; 
-
-    };
-    
-    
-    
-	
+		dottest: dottest {
+        		compatible = "zmk,behavior-mod-morph";
+        		label = "dottest";
+        		#binding-cells = <0>;
+        		bindings = <&kp DOT>, <&macro_de_mt>;
+        		mods = <(MOD_LSFT)>;
+        		masked_mods = <(MOD_LSFT)>; 
+    		};
 	};
 
 
