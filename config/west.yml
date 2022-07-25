@@ -9,8 +9,8 @@ manifest:
 
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: main
+      remote: urob
+      revision: masked-mods-pr
       import: app/west.yml
   self:
     path: config
