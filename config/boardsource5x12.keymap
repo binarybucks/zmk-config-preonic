@@ -129,6 +129,21 @@ mm_##NAME: mm_##NAME {\
 
     		};
 		
+		macro_de_slash: macro_de_slash {
+            		label = "macro_de_slash";
+           		compatible = "zmk,behavior-macro";
+            		#binding-cells = <0>;
+			wait-ms = <16>;
+			tap-ms = <16>;
+			bindings
+   			 = <&macro_press   &kp LSHFT>
+    			, <&macro_tap     &kp N7>
+   			 , <&macro_release &kp LSHFT>
+    			;
+
+
+       		};
+		
 		 MM_MASKEDLSHIFT(comma, COMMA, DE_LT)
 		 MM_MASKEDLSHIFT(slash, DE_SLASH, DE_QUESTION)
 		 MM_MASKEDLSHIFT(semicolon, DE_SEMICOLON, DE_COLON)
@@ -168,24 +183,9 @@ mm_##NAME: mm_##NAME {\
 		
 		
 		
-		macro_de_slash: macro_de_slash {
-            		label = "macro_de_slash";
-           		compatible = "zmk,behavior-macro";
-            		#binding-cells = <0>;
-			wait-ms = <16>;
-			tap-ms = <16>;.
-            		bindings =  <&macro_tap &kp DE_SLASH> ;
-       		};
 
-		macro_de_question: macro_de_question {
-            		label = "macro_de_question";
-           		compatible = "zmk,behavior-macro";
-            		#binding-cells = <0>;
-			wait-ms = <16>;
-			tap-ms = <16>;.
 
-            		bindings =  <&macro_tap &kp DE_QUESTION> ;
-       		};
+	
 
 	
 	};
