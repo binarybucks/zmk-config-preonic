@@ -133,8 +133,8 @@ mm_##NAME: mm_##NAME {\
             		label = "macro_de_slash";
            		compatible = "zmk,behavior-macro";
             		#binding-cells = <0>;
-			wait-ms = <16>;
-			tap-ms = <16>;
+			wait-ms = <20>;
+			tap-ms = <20>;
 			bindings
    			 = <&macro_press   &kp LSHFT>
     			, <&macro_tap     &kp N7>
