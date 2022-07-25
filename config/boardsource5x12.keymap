@@ -113,7 +113,7 @@ mm_##NAME: mm_##NAME {\
         		compatible = "zmk,behavior-mod-morph";
         		label = "mmnew_comma";
         		#binding-cells = <0>;
-        		bindings = <&kp DOT>, <&kp DE_LT>;
+        		bindings = <&kp COMMA>, <&kp DE_LT>;
         		mods = <(MOD_LSFT)>;
         		masked_mods = <(MOD_LSFT)>; 
     		};
@@ -172,12 +172,10 @@ mm_##NAME: mm_##NAME {\
             		label = "macro_de_slash";
            		compatible = "zmk,behavior-macro";
             		#binding-cells = <0>;
-			wait-ms = <10>;
+			wait-ms = <16>;
             		bindings
                 	= <&macro_press &kp LSHIFT>
-			, <&macro_wait_time 30>
                 	, <&macro_tap &kp N7>
-			, <&macro_pause_for_release>
 			, <&macro_release &kp LSHIFT>;
        		};
 
