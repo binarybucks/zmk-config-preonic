@@ -9,8 +9,8 @@ manifest:
 
   projects:
     - name: zmk
-      remote: vrinek
-      revision: masked-mod-morphs-untested
+      remote: zmkfirmware
+      revision: main
       import: app/west.yml
   self:
     path: config
