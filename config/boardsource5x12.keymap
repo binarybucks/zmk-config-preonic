@@ -143,24 +143,10 @@ mm_##NAME: mm_##NAME {\
         		compatible = "zmk,behavior-mod-morph";
         		label = "mmnew_pipe";
         		#binding-cells = <0>;
-        		bindings = <&kp DE_PIPE>, <&kp DE_BACKSLASH>;
+        		bindings = <&mcro_pipe>, <&kp RA(DE_SS)>;
         		mods = <(MOD_LSFT)>;
         		masked_mods = <(MOD_LSFT)>; 
     		};
-		macro_de_slash: macro_de_slash {
-            		label = "macro_de_slash";
-           		compatible = "zmk,behavior-macro";
-            		#binding-cells = <0>;
-			wait-ms = <20>;
-			tap-ms = <20>;
-			bindings
-   			 = <&macro_press   &kp LSHFT>
-    			, <&macro_tap     &kp N7>
-   			 , <&macro_release &kp LSHFT>
-    			;
-
-
-       		};
 		
 		 MM_MASKEDLSHIFT(comma, COMMA, DE_LT)
 		 MM_MASKEDLSHIFT(slash, DE_SLASH, DE_QUESTION)
@@ -185,6 +171,15 @@ mm_##NAME: mm_##NAME {\
 		 MM_MASKEDLSHIFT(brl,DE_BRL_SQR, DE_BRL_CRL)
 		 MM_MASKEDLSHIFT(brr,DE_BRR_SQR, DE_BRR_CRL)
 
+		ZMK_MACRO(mcro_pipe,
+		wait-ms = <16>;
+		tap-ms = <16>;
+		bindings
+		= <&macro_press &kp RALT>
+                , <&macro_tap &kp DE_LT>
+		, <&macro_release &kp RALT>
+		;)
+		
   		ZMK_MACRO(nfmt,
 		wait-ms = <0>;
 		tap-ms = <0>;
