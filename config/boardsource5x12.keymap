@@ -16,13 +16,13 @@
 #define ISODE     4
 #define ISODESPECIAL     5
 
-#define DE_SLASH        RS(N7)
-#define DE_QUESTION     RS(MINUS)
+#define DE_SLASH        LS(N7)
+#define DE_QUESTION     LS(MINUS)
 #define DE_LT    	NON_US_BACKSLASH
-#define DE_MT    	RS(DE_LT)
+#define DE_MT    	LS(DE_LT)
 
-#define DE_COLON    	RS(DOT)
-#define DE_SEMICOLON    RS(COMMA)
+#define DE_COLON    	LS(DOT)
+#define DE_SEMICOLON    LS(COMMA)
 #define DE_OE    	SEMICOLON
 #define DE_AE    	SINGLE_QUOTE
 #define DE_UE    	LEFT_BRACKET
@@ -30,23 +30,23 @@
 #define DE_SS    	MINUS
 #define DE_BACKSLASH    RA(MINUS)
 #define DE_MINUS        SLASH
-#define DE_EQUAL        RS(N0)
-#define DE_UNDERSCORE   RS(SLASH)
-#define DE_PIPE		RA(DE_LT)
+#define DE_EQUAL        LS(N0)
+#define DE_UNDERSCORE   LS(SLASH)
+#define DE_PIPE		RA(NON_US_BACKSLASH)
 
-#define DE_EXCL 	RS(N1)
-#define DE_QUOTEDOUBLE 	RS(N2)
+#define DE_EXCL 	LS(N1)
+#define DE_QUOTEDOUBLE 	LS(N2)
 #define DE_HASH 	BACKSLASH
-#define DE_QUOTESINGLE 	LS(DE_HASH)
-#define DE_USD		RS(N4)
-#define DE_PERCT	RS(N5)
+#define DE_QUOTESINGLE 	LS(BACKSLASH)
+#define DE_USD		LS(N4)
+#define DE_PERCT	LS(N5)
 #define DE_CRRT		GRAVE
 #define DE_AMPST	RS(N6)
 #define DE_ASRSK	RS(DE_PLUS)
 #define DE_BRL_RND	RS(N8)	
 #define DE_BRL_CRL	RA(N7)	
 #define DE_BRL_SQR	RA(N8)	
-#define DE_BRR_RND	RS(N9)
+#define DE_BRR_RND	LS(N9)
 #define DE_BRR_CRL	RA(N0)	
 #define DE_BRR_SQR   	RA(N9)	
 #define DE_BACKTICK    	EQUAL	
@@ -89,8 +89,18 @@ mm_##NAME: mm_##NAME {\
     #binding-cells = <0>; \
     bindings = <&kp KEY>, <&kp MOD_KEY>; \
     mods = <(MOD_LSFT)>; \
+    masked_mods = <(MOD_LSFT)>; \
   }; \
 
+#define MM_NOMASKEDLSHIFT(NAME, KEY, MOD_KEY) \
+  mmms_##NAME: mmms_##NAME { \
+    compatible = "zmk,behavior-mod-morph"; \
+    label = str(NAME); \
+    #binding-cells = <0>; \
+    bindings = <&kp KEY>, <&kp MOD_KEY>; \
+    mods = <(MOD_LSFT)>; \
+    masked_mods = <0>; \
+  }; \
 
 
 
@@ -104,8 +114,7 @@ mm_##NAME: mm_##NAME {\
         		#binding-cells = <0>;
         		bindings = <&kp DOT>, <&kp DE_LT>;
         		mods = <(MOD_LSFT)>;
-			//masked_mods = <0>; //dont mask LSFT for More Than 
-
+			masked_mods = <0>; //dont mask LSFT for More Than 
     		};
 		
 		mmnew_comma: mmnew_comma {
@@ -114,7 +123,7 @@ mm_##NAME: mm_##NAME {\
         		#binding-cells = <0>;
         		bindings = <&kp COMMA>, <&kp DE_LT>;
         		mods = <(MOD_LSFT)>;
-        		//masked_mods = <(MOD_LSFT)>; 
+        		masked_mods = <(MOD_LSFT)>; 
     		};
 		
 		mmnew_slash: mmnew_slash {
@@ -123,7 +132,7 @@ mm_##NAME: mm_##NAME {\
         		#binding-cells = <0>;
         		bindings = <&kp DE_SLASH>, <&kp MINUS>;
         		mods = <(MOD_LSFT)>;
-			//masked_mods = <0>; //dont mask LSFT for Questionmark
+			masked_mods = <0>; //dont mask LSFT for Questionmark
     		};
 		
 				
@@ -133,27 +142,20 @@ mm_##NAME: mm_##NAME {\
         		#binding-cells = <0>;
         		bindings = <&kp DE_SEMICOLON>, <&kp DOT>;
         		mods = <(MOD_LSFT)>;
-			//masked_mods = <0>; //dont mask LSFT for Dot
+			masked_mods = <0>; //dont mask LSFT for Dot
     		};
 		
 		mmnew_pipe: mmnew_pipe {
         		compatible = "zmk,behavior-mod-morph";
         		label = "mmnew_pipe";
         		#binding-cells = <0>;
-        		bindings = <&mcro_pipe>, <&kp RA(DE_SS)>;
+        		bindings = <&kp DE_PIPE>, <&kp DE_BACKSLASH>;
         		mods = <(MOD_LSFT)>;
-        		//masked_mods = <(MOD_LSFT)>; 
+        		masked_mods = <(MOD_LSFT)>; 
     		};
 		
 		
-		ZMK_MACRO(mcro_pipe,
-		wait-ms = <16>;
-		tap-ms = <16>;
-		bindings
-		= <&macro_press &kp RALT>
-                , <&macro_tap &kp DE_LT>
-		, <&macro_release &kp RALT>
-		;)
+
 		 MM_MASKEDLSHIFT(comma, COMMA, DE_LT)
 		 MM_MASKEDLSHIFT(slash, DE_SLASH, DE_QUESTION)
 		 MM_MASKEDLSHIFT(semicolon, DE_SEMICOLON, DE_COLON)
@@ -235,7 +237,7 @@ mm_##NAME: mm_##NAME {\
                 &none     &mmms_quotesingle     &none    &none    &none      &none    &none     &none      &mmms_brl   &mmms_brr   &none      &trans
                 &trans    &none     &none    &none    &none      &none    &none     &kp DE_UE  &none    &kp DE_OE  &kp PSCRN  &trans
                 &trans    &kp DE_AE &kp DE_SS &none    &none      &none    &kp LEFT  &kp DOWN   &kp UP   &kp RIGHT  &none      &trans
-                &trans    &bootloader &reset   &none    &none      &mmnew_pipe    &kp DE_TILDE     &none      &none    &none      &mmnew_pipe  &none
+                &trans    &bootloader &reset   &none    &none      &none    &kp DE_TILDE     &none      &none    &none      &mmnew_pipe  &none
                 &trans    &trans    &trans   &mo ISODE   &mo ADJUST &trans   &trans    &mo ADJUST &trans   &trans     &trans     &trans 
             >;
         };
