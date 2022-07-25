@@ -174,10 +174,7 @@ mm_##NAME: mm_##NAME {\
             		#binding-cells = <0>;
 			wait-ms = <16>;
 			tap-ms = <16>;.
-            		bindings
-                	= 
-                	<&macro_tap &kp DE_SLASH>
-			;
+            		bindings =  <&macro_tap &kp DE_SLASH> ;
        		};
 
 		macro_de_question: macro_de_question {
@@ -187,10 +184,7 @@ mm_##NAME: mm_##NAME {\
 			wait-ms = <16>;
 			tap-ms = <16>;.
 
-            		bindings
-                	= 
-			<&macro_tap &kp DE_QUESTION>
-			;
+            		bindings =  <&macro_tap &kp DE_QUESTION> ;
        		};
 
 	
