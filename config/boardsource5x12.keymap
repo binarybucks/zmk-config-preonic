@@ -122,13 +122,31 @@ mm_##NAME: mm_##NAME {\
         		compatible = "zmk,behavior-mod-morph";
         		label = "mmnew_slash";
         		#binding-cells = <0>;
-        		bindings = <&macro_de_slash>, <&kp MINUS>;
+        		bindings = <&kp DE_SLASH>, <&kp MINUS>;
         		mods = <(MOD_LSFT)>;
         		masked_mods = <(MOD_LSFT)>; 
 			masked_mods = <0>; //dont mask LSFT for Questionmark
-
     		};
 		
+				
+		mmnew_semi: mmnew_semi {
+        		compatible = "zmk,behavior-mod-morph";
+        		label = "mmnew_semi";
+        		#binding-cells = <0>;
+        		bindings = <&kp DE_SEMICOLON>, <&kp DOT>;
+        		mods = <(MOD_LSFT)>;
+        		masked_mods = <(MOD_LSFT)>; 
+			masked_mods = <0>; //dont mask LSFT for Dot
+    		};
+		
+		mmnew_pipe: mmnew_pipe {
+        		compatible = "zmk,behavior-mod-morph";
+        		label = "mmnew_pipe";
+        		#binding-cells = <0>;
+        		bindings = <&kp DE_PIPE>, <&kp DE_BACKSLASH>;
+        		mods = <(MOD_LSFT)>;
+        		masked_mods = <(MOD_LSFT)>; 
+    		};
 		macro_de_slash: macro_de_slash {
             		label = "macro_de_slash";
            		compatible = "zmk,behavior-macro";
@@ -206,7 +224,7 @@ mm_##NAME: mm_##NAME {\
             bindings = <
                 &mmms_1    &mmms_2      &mmms_3     &mmms_4  &mmms_5    &mmms_6     &mmms_7     &mmms_8 &mmms_9     &mmms_0     &mmms_minus      &mmms_equal 
                 &kp TAB    &kp Q        &kp W       &kp E    &kp R      &kp T       &kp Y       &kp U   &kp I       &kp O       &kp P          &kp BSPC
-                &kp ESC    &kp A        &kp S       &kp D    &kp F      &kp G       &kp H       &kp J   &kp K       &kp L       &mmms_semicolon  &kp RET
+                &kp ESC    &kp A        &kp S       &kp D    &kp F      &kp G       &kp H       &kp J   &kp K       &kp L       &mmnew_semi  &kp RET
                 &kp LSHFT  &kp Z        &kp X       &kp C    &kp V      &kp B       &kp N       &kp M   &mmnew_comma &mmnew_dot &mmnew_slash      &mo ISODE
                 &kp LCTRL  &kp LGUI     &kp LALT    &mo MACRO &mo LOWER &kp SPACE  &kp SPACE    &mo LOWER &kp RALT  &kp PG_UP   &kp PG_DN      &kp DEL 
             >;
@@ -223,7 +241,7 @@ mm_##NAME: mm_##NAME {\
                 &none     &mmms_quotesingle     &none    &none    &none      &none    &none     &none      &mmms_brl   &mmms_brr   &none      &trans
                 &trans    &none     &none    &none    &none      &none    &none     &kp DE_UE  &none    &kp DE_OE  &kp PSCRN  &trans
                 &trans    &kp DE_AE &kp DE_SS &none    &none      &none    &kp LEFT  &kp DOWN   &kp UP   &kp RIGHT  &none      &trans
-                &trans    &bootloader &reset   &none    &none      &none    &kp DE_TILDE     &none      &none    &none      &mmms_pipe  &none
+                &trans    &bootloader &reset   &none    &none      &none    &kp DE_TILDE     &none      &none    &none      &mmnew_pipe  &none
                 &trans    &trans    &trans   &mo ISODE   &mo ADJUST &trans   &trans    &mo ADJUST &trans   &trans     &trans     &trans 
             >;
         };
