@@ -99,26 +99,26 @@ mm_##NAME: mm_##NAME {\
 
 	behaviors {
 		
-		mm_dot: mm_dot {
+		mmnew_dot: mmnew_dot {
         		compatible = "zmk,behavior-mod-morph";
-        		label = "mm_dot";
+        		label = "mmnew_dot";
         		#binding-cells = <0>;
         		bindings = <&kp DOT>, <&kp DE_LT>;
         		mods = <(MOD_LSFT)>;
     		};
 		
-		mm_comma: dottest {
+		mmnew_comma: mmnew_comma {
         		compatible = "zmk,behavior-mod-morph";
-        		label = "dottest";
+        		label = "mmnew_comma";
         		#binding-cells = <0>;
         		bindings = <&kp DOT>, <&kp DE_LT>;
         		mods = <(MOD_LSFT)>;
         		masked_mods = <(MOD_LSFT)>; 
     		};
 		
-		mm_slash: dottest {
+		mmnew_slash: mmnew_slash {
         		compatible = "zmk,behavior-mod-morph";
-        		label = "dottest";
+        		label = "mmnew_slash";
         		#binding-cells = <0>;
         		bindings = <&macro_de_slash>, <&macro_de_question>;
         		mods = <(MOD_LSFT)>;
@@ -214,7 +214,7 @@ mm_##NAME: mm_##NAME {\
                 &mmms_1    &mmms_2      &mmms_3     &mmms_4  &mmms_5    &mmms_6     &mmms_7     &mmms_8 &mmms_9     &mmms_0     &mmms_minus      &mmms_equal 
                 &kp TAB    &kp Q        &kp W       &kp E    &kp R      &kp T       &kp Y       &kp U   &kp I       &kp O       &kp P          &kp BSPC
                 &kp ESC    &kp A        &kp S       &kp D    &kp F      &kp G       &kp H       &kp J   &kp K       &kp L       &mmms_semicolon  &kp RET
-                &kp LSHFT  &kp Z        &kp X       &kp C    &kp V      &kp B       &kp N       &kp M   &mm_comma_fixed &mm_dot &mmms_slash      &mo ISODE
+                &kp LSHFT  &kp Z        &kp X       &kp C    &kp V      &kp B       &kp N       &kp M   &mmnew_comma &mmnew_dot &mmnew_slash      &mo ISODE
                 &kp LCTRL  &kp LGUI     &kp LALT    &mo MACRO &mo LOWER &kp SPACE  &kp SPACE    &mo LOWER &kp RALT  &kp PG_UP   &kp PG_DN      &kp DEL 
             >;
         };
