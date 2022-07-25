@@ -105,6 +105,8 @@ mm_##NAME: mm_##NAME {\
         		#binding-cells = <0>;
         		bindings = <&kp DOT>, <&kp DE_LT>;
         		mods = <(MOD_LSFT)>;
+			masked_mods = <0>; //dont mask LSFT for More Than 
+
     		};
 		
 		mmnew_comma: mmnew_comma {
@@ -120,9 +122,11 @@ mm_##NAME: mm_##NAME {\
         		compatible = "zmk,behavior-mod-morph";
         		label = "mmnew_slash";
         		#binding-cells = <0>;
-        		bindings = <&macro_de_slash>, <&macro_de_question>;
+        		bindings = <&macro_de_slash>, <&kp MINUS>;
         		mods = <(MOD_LSFT)>;
         		masked_mods = <(MOD_LSFT)>; 
+			masked_mods = <0>; //dont mask LSFT for Questionmark
+
     		};
 		
 		 MM_MASKEDLSHIFT(comma, COMMA, DE_LT)
@@ -171,11 +175,10 @@ mm_##NAME: mm_##NAME {\
 			wait-ms = <10>;
             		bindings
                 	= 
-			 <&macro_wait_time 30>
 			, <&macro_press &kp LSHIFT>
 			, <&macro_wait_time 30>
                 	, <&macro_tap &kp N7>
-			, <&macro_wait_time 30>
+			, <&macro_pause_for_release>
 			, <&macro_release &kp LSHIFT>;
        		};
 
