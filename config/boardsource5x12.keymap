@@ -176,7 +176,7 @@ mm_##NAME: mm_##NAME {\
                 &mmms_1    &mmms_2      &mmms_3     &mmms_4  &mmms_5    &mmms_6     &mmms_7     &mmms_8 &mmms_9     &mmms_0     &mmms_minus      &mmms_equal 
                 &kp TAB    &kp Q        &kp W       &kp E    &kp R      &kp T       &kp Y       &kp U   &kp I       &kp O       &kp P          &kp BSPC
                 &kp ESC    &kp A        &kp S       &kp D    &kp F      &kp G       &kp H       &kp J   &kp K       &kp L       &mmms_semi  &kp RET
-                &kp LSHFT  &kp Z        &kp X       &kp C    &kp V      &kp B       &kp N       &kp M   &mmms_comma mmms_dot &mmms_slash      &mo ISODE
+                &kp LSHFT  &kp Z        &kp X       &kp C    &kp V      &kp B       &kp N       &kp M   &mmms_comma &mmms_dot &mmms_slash      &mo ISODE
                 &kp LCTRL  &kp LGUI     &kp LALT    &mo MACRO &mo LOWER &kp SPACE  &kp SPACE    &mo LOWER &kp RALT  &kp PG_UP   &kp PG_DN      &kp DEL 
             >;
         };
