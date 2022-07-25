@@ -4,10 +4,15 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: urob 
       url-base: https://github.com/urob
+    - name: vrinek
+      url-base: https://github.com/vrinek
+
   projects:
     - name: zmk
-      remote: urob
-      revision: masked-mods-pr
+      remote: vrinek
+      revision: masked-mod-morphs-untested
       import: app/west.yml
   self:
     path: config
+
+
