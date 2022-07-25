@@ -174,8 +174,7 @@ mm_##NAME: mm_##NAME {\
             		#binding-cells = <0>;
 			wait-ms = <10>;
             		bindings
-                	= 
-			, <&macro_press &kp LSHIFT>
+                	= <&macro_press &kp LSHIFT>
 			, <&macro_wait_time 30>
                 	, <&macro_tap &kp N7>
 			, <&macro_pause_for_release>
@@ -188,9 +187,7 @@ mm_##NAME: mm_##NAME {\
             		#binding-cells = <0>;
 			wait-ms = <10>;
             		bindings
-                	= 
-			 <&macro_wait_time 30>
-			, <&macro_press &kp LSHIFT>
+                	= <&macro_press &kp LSHIFT>
 			, <&macro_wait_time 30>
                 	, <&macro_tap &kp MINUS>
 			, <&macro_wait_time 30>
