@@ -173,14 +173,10 @@ mm_##NAME: mm_##NAME {\
            		compatible = "zmk,behavior-macro";
             		#binding-cells = <0>;
 			wait-ms = <16>;
+			tap-ms = <16>;.
             		bindings
                 	= 
-			  <&macro_press &kp LSHIFT>
-			, <&macro_wait_time 16>
-                	, <&macro_tap &kp N7>
-			, <&macro_wait_time 16>
-			, <&macro_release &kp LSHIFT>
-			, <&macro_wait_time 16>
+                	<&macro_tap &kp DE_SLASH>
 			;
        		};
 
@@ -188,13 +184,13 @@ mm_##NAME: mm_##NAME {\
             		label = "macro_de_question";
            		compatible = "zmk,behavior-macro";
             		#binding-cells = <0>;
-			wait-ms = <10>;
+			wait-ms = <16>;
+			tap-ms = <16>;.
+
             		bindings
-                	= <&macro_press &kp LSHIFT>
-			, <&macro_wait_time 30>
-                	, <&macro_tap &kp MINUS>
-			, <&macro_wait_time 30>
-			, <&macro_release &kp LSHIFT>;
+                	= 
+			<&macro_tap &kp DE_QUESTION>
+			;
        		};
 
 	
