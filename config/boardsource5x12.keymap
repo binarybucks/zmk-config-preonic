@@ -89,7 +89,6 @@ mm_##NAME: mm_##NAME {\
     #binding-cells = <0>; \
     bindings = <&kp KEY>, <&kp MOD_KEY>; \
     mods = <(MOD_LSFT)>; \
-    masked_mods = <(MOD_LSFT)>; \
   }; \
 
 
@@ -105,7 +104,7 @@ mm_##NAME: mm_##NAME {\
         		#binding-cells = <0>;
         		bindings = <&kp DOT>, <&kp DE_LT>;
         		mods = <(MOD_LSFT)>;
-			masked_mods = <0>; //dont mask LSFT for More Than 
+			//masked_mods = <0>; //dont mask LSFT for More Than 
 
     		};
 		
@@ -115,7 +114,7 @@ mm_##NAME: mm_##NAME {\
         		#binding-cells = <0>;
         		bindings = <&kp COMMA>, <&kp DE_LT>;
         		mods = <(MOD_LSFT)>;
-        		masked_mods = <(MOD_LSFT)>; 
+        		//masked_mods = <(MOD_LSFT)>; 
     		};
 		
 		mmnew_slash: mmnew_slash {
@@ -124,7 +123,6 @@ mm_##NAME: mm_##NAME {\
         		#binding-cells = <0>;
         		bindings = <&kp DE_SLASH>, <&kp MINUS>;
         		mods = <(MOD_LSFT)>;
-        		masked_mods = <(MOD_LSFT)>; 
 			masked_mods = <0>; //dont mask LSFT for Questionmark
     		};
 		
@@ -135,8 +133,7 @@ mm_##NAME: mm_##NAME {\
         		#binding-cells = <0>;
         		bindings = <&kp DE_SEMICOLON>, <&kp DOT>;
         		mods = <(MOD_LSFT)>;
-        		masked_mods = <(MOD_LSFT)>; 
-			masked_mods = <0>; //dont mask LSFT for Dot
+			//masked_mods = <0>; //dont mask LSFT for Dot
     		};
 		
 		mmnew_pipe: mmnew_pipe {
@@ -145,9 +142,18 @@ mm_##NAME: mm_##NAME {\
         		#binding-cells = <0>;
         		bindings = <&mcro_pipe>, <&kp RA(DE_SS)>;
         		mods = <(MOD_LSFT)>;
-        		masked_mods = <(MOD_LSFT)>; 
+        		//masked_mods = <(MOD_LSFT)>; 
     		};
 		
+		
+		ZMK_MACRO(mcro_pipe,
+		wait-ms = <16>;
+		tap-ms = <16>;
+		bindings
+		= <&macro_press &kp RALT>
+                , <&macro_tap &kp DE_LT>
+		, <&macro_release &kp RALT>
+		;)
 		 MM_MASKEDLSHIFT(comma, COMMA, DE_LT)
 		 MM_MASKEDLSHIFT(slash, DE_SLASH, DE_QUESTION)
 		 MM_MASKEDLSHIFT(semicolon, DE_SEMICOLON, DE_COLON)
@@ -171,14 +177,7 @@ mm_##NAME: mm_##NAME {\
 		 MM_MASKEDLSHIFT(brl,DE_BRL_SQR, DE_BRL_CRL)
 		 MM_MASKEDLSHIFT(brr,DE_BRR_SQR, DE_BRR_CRL)
 
-		ZMK_MACRO(mcro_pipe,
-		wait-ms = <16>;
-		tap-ms = <16>;
-		bindings
-		= <&macro_press &kp RALT>
-                , <&macro_tap &kp DE_LT>
-		, <&macro_release &kp RALT>
-		;)
+	
 		
   		ZMK_MACRO(nfmt,
 		wait-ms = <0>;
