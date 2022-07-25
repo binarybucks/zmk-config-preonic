@@ -174,9 +174,14 @@ mm_##NAME: mm_##NAME {\
             		#binding-cells = <0>;
 			wait-ms = <16>;
             		bindings
-                	= <&macro_press &kp LSHIFT>
+                	= 
+			  <&macro_press &kp LSHIFT>
+			, <&macro_wait_time 16>
                 	, <&macro_tap &kp N7>
-			, <&macro_release &kp LSHIFT>;
+			, <&macro_wait_time 16>
+			, <&macro_release &kp LSHIFT>
+			, <&macro_wait_time 16>
+			;
        		};
 
 		macro_de_question: macro_de_question {
